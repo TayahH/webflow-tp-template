@@ -1,5 +1,8 @@
+// main.js
 import { initializeVidstackPlayers } from "./vidstack-player.js";
 
-window.addEventListener("DOMContentLoaded", async () => {
-  await initializeVidstackPlayers();
-});
+if (document.readyState === "loading") {
+  window.addEventListener("DOMContentLoaded", initializeVidstackPlayers);
+} else {
+  initializeVidstackPlayers();
+}
